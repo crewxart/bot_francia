@@ -2,8 +2,8 @@
 
 from odoo import models, fields, api
 
-# class productos(models.Model):
-#     _name = 'productos.productos'
+# class inventario(models.Model):
+#     _name = 'inventario.inventario'
 
 #     name = fields.Char()
 #     value = fields.Integer()
