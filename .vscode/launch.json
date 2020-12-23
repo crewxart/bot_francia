@@ -17,7 +17,7 @@
           "console": "integratedTerminal",
           "cwd": "${workspaceRoot}",
           "stopOnEntry": false,
-          "args": ["-c", "${workspaceRoot}/odoo.conf", "-u", "inventario"]
+          "args": ["-c", "${workspaceRoot}/odoo.conf", "-u", "inventario,facturacion", "-d", "francia"]
         }
       ]
     }
