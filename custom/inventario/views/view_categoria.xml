@@ -1,6 +1,6 @@
 <odoo>
     <data>
-    <!--  List producto-->
+    <!--  List categoría-->
 
         <record model="ir.ui.view" id="categoria_list">
         <field name="name">Lista de categorías</field>
@@ -14,7 +14,7 @@
         </field>
         </record>
 
-    <!-- Form producto -->
+    <!-- Form categoría -->
         
         <record model="ir.ui.view" id="categoria_form">
         <field name="name">Lista de categorías</field>
@@ -33,13 +33,13 @@
         </field>
         </record>
 
-    <!-- Action window Producto -->
+    <!-- Action window Categoría -->
         <record model="ir.actions.act_window" id="categoria_action_window">
             <field name="name">Lista de categorias</field>
             <field name="res_model">categoria</field>
             <field name="view_mode">tree,form</field>
         </record>
-    <!-- Action server Producto -->
+    <!-- Action server Categoría -->
     <record model="ir.actions.server" id="categoria_action_server">
       <field name="name">inventario server</field>
       <field name="model_id" ref="model_categoria"/>
@@ -53,7 +53,7 @@
       </field>
     </record>
 
-    <!-- Menú root Producto -->
+    <!-- Menú root Categoría -->
     <menuitem name="Categorias" id="categoria_menu_1" parent="producto_menu_root" action="categoria_action_window"/>
 
 
