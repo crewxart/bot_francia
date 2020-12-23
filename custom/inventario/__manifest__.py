@@ -26,6 +26,7 @@ poder gestionar los productos registrados
     'data': [
         'security/ir.model.access.csv',
         'views/view_producto.xml',
+        'views/view_categoria.xml'
         # 'views/templates.xml',
     ],
     # only loaded in demonstration mode
