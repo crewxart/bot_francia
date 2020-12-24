@@ -14,7 +14,16 @@ class factura(models.Model):
     nFactura=fields.Integer()
     LugarEmision=fields.Char()
 
+
     factura_ids= fields.One2many('detalle', 'factura_id', string="Productos")
 
     
-        
+      
+
+class detalle(models.Model):
+    _name='detalle'
+    factura_id = fields.Many2one('factura', string="Factura")
+
+
+    productos_id = fields.Many2one('producto', string="productos")
+    cantidad= fields.Float()  

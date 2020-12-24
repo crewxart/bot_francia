@@ -19,7 +19,8 @@ class producto(models.Model):
     descripcion = fields.Char()
     costoNeto = fields.Float()
     precioVenta = fields.Float()
-    productos_ids = fields.One2many('detalle', 'productos_id', string="Detalles")
+    productos_ids = fields.One2many('detalle', 'productos_id')
+    
     
 
     categoria_id = fields.Many2one(

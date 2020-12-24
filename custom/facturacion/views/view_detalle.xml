@@ -2,35 +2,35 @@
     <data>
     <!--  List factura-->
 
-        <record model="ir.ui.view" id="factura_list">
+        <record model="ir.ui.view" id="detalle_list">
         <field name="name">Lista de facturas</field>
-        <field name="model">factura</field>
+        <field name="model">detalle</field>
         <field name="arch" type="xml">
         <tree>
-            <field name="name"/>
-            <field name="EmpresaMandante"/>
-            <field name="LugarEmision"/>
-            
+                    <field name="cantidad"/>
+                    <field name="productos_ids"/>
+                
+
+                    
         </tree>
         </field>
         </record>
 
     <!-- Form factura -->
         
-        <record model="ir.ui.view" id="factura_form">
+        <record model="ir.ui.view" id="detalle_form">
         <field name="name">Lista de facturas</field>
-        <field name="model">factura</field>
+        <field name="model">detalle</field>
         <field name="arch" type="xml">
         <form>
             <sheet>
                     <group>
 
-                    <field name="name"/>
-                    <field name="EmpresaMandante"/>
+                    <field name="productos_ids"/>
+                    <field name="cantidad"/>
+
                     </group>
                     <group>
-                    <field name="factura_ids"/>
-
                     </group>
             </sheet>
         </form>
@@ -38,15 +38,15 @@
         </record>
 
     <!-- Action window factura -->
-        <record model="ir.actions.act_window" id="factura_action_window">
+        <record model="ir.actions.act_window" id="detalle_action_window">
             <field name="name">Lista de facturas</field>
-            <field name="res_model">factura</field>
+            <field name="res_model">detalle</field>
             <field name="view_mode">tree,form</field>
         </record>
     <!-- Action server factura -->
-    <record model="ir.actions.server" id="factura_action_server">
+    <record model="ir.actions.server" id="detalle_action_server">
       <field name="name">inventario server</field>
-      <field name="model_id" ref="model_factura"/>
+      <field name="model_id" ref="model_detalle"/>
       <field name="state">code</field>
       <field name="code">
         action = {
@@ -57,10 +57,7 @@
       </field>
     </record>
 
-    <!-- Menú root factura -->
-    <menuitem name="Facturación" id="facturacion_menu_root"/>
-    <menuitem name="facturas" id="factura_menu_1" parent="facturacion_menu_root" action="factura_action_window"/>
-
+   
 
     </data>
 </odoo>

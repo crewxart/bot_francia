@@ -21,7 +21,6 @@ poder gestionar las facturas de compra de la organización y ver sus estados.
 
     # any module necessary for this one to work correctly
     'depends': ['base'],
-
     # always loaded
     'data': [
          'security/ir.model.access.csv',
