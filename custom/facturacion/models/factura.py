@@ -16,13 +16,13 @@ class factura(models.Model):
 
 
     factura_ids= fields.One2many('detalle', 'factura_id', string="Productos")
-
     
       
 
 class detalle(models.Model):
     _name='detalle'
     factura_id = fields.Many2one('factura', string="Factura")
+    productos_id = fields.Many2one('producto', string="productos")
 
 
     ########## GENERAL
@@ -32,25 +32,25 @@ class detalle(models.Model):
         self.precioNeto= self.productos_id.costoNeto
     
 
-    productos_id = fields.Many2one('producto', string="productos")
     precioNeto=fields.Float()
-    
-    precioNeto_almacened=precioNeto
+    ###################
+
+
+    ##Calcular subtotal al modificar cantidad o descuento
     cantidad= fields.Float()
     descuento = fields.Float(string="Descuento %")
 
-    ##Calcular subtotal al modificar cantidad o descuento
+    iva=fields.Float(string="IVA")
+
+
     @api.onchange('cantidad','descuento')
     def _compute_subtotal(self):
         if (self.descuento>0):
-            self.subtotal = (self.cantidad*self.precioNeto)-(self.cantidad * self.precioNeto)*self.descuento/100
+            self.iva= (self.cantidad*self.precioNeto)*0.19
+            self.subtotal = ((self.cantidad*self.precioNeto)-(self.cantidad * self.precioNeto)*self.descuento/100)+self.iva
         else:
-            self.subtotal = self.cantidad * self.precioNeto
+            self.iva= (self.cantidad*self.precioNeto)*0.19
+            self.subtotal = (self.cantidad * self.precioNeto)+self.iva
 
     subtotal=fields.Float()
-
-
-
-
-    ############### IMPUESTOS
-
+    ## Impuesto

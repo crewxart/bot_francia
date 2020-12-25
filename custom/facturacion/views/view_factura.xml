@@ -27,13 +27,9 @@
                     <field name="name"/>
                     <field name="EmpresaMandante"/>
         </group>
-            <notebook>
-                <page string="Detalle">
+        <group>
                     <field name="factura_ids"/>
-                </page>
-                <page string="Impuestos">
-                </page>
-            </notebook>
+        </group>
         </sheet>
 
         </form>
