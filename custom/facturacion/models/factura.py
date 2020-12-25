@@ -24,6 +24,18 @@ class detalle(models.Model):
     _name='detalle'
     factura_id = fields.Many2one('factura', string="Factura")
 
+    @api.onchange('productos_id')
+    def _onchange(self):
+        self.precioNeto= self.productos_id.costoNeto
+    
 
     productos_id = fields.Many2one('producto', string="productos")
-    cantidad= fields.Float()  
+    precioNeto=fields.Float()
+    cantidad= fields.Float()
+    @api.onchange('cantidad')
+    def _compute_subtotal(self):
+        self.subtotal = self.cantidad * self.precioNeto
+
+    
+ 
+    subtotal=fields.Float(compute='_compute_subtotal')

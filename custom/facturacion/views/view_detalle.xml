@@ -7,9 +7,12 @@
         <field name="model">detalle</field>
         <field name="arch" type="xml">
         <tree>
+                    <field name="productos_id"/>
+                    <field name="precioNeto"/>
+
                     <field name="cantidad"/>
-                    <field name="productos_ids"/>
-                
+                    <field name="subtotal"/>
+
 
                     
         </tree>
@@ -26,8 +29,11 @@
             <sheet>
                     <group>
 
-                    <field name="productos_ids"/>
+                    <field name="productos_id"/>
+                    <field name="precioNeto"/>
+
                     <field name="cantidad"/>
+                    <field name="subtotal"/>
 
                     </group>
                     <group>

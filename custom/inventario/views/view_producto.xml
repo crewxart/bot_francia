@@ -9,6 +9,8 @@
         <tree>
           <field name="name"/>
           <field name="descripcion"/>
+          <field name="costoNeto"/>
+
           <field name="categoria_id"/>
         </tree>
         </field>
@@ -27,6 +29,8 @@
                     <field name="name"/>
                     <field name="descripcion"/>
                     <field name="categoria_id"/>
+                    <field name="costoNeto"/>
+
                 </group>
             </sheet>
         </form>
