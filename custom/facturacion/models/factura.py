@@ -31,11 +31,18 @@ class detalle(models.Model):
 
     productos_id = fields.Many2one('producto', string="productos")
     precioNeto=fields.Float()
-    cantidad= fields.Float()
-    @api.onchange('cantidad')
-    def _compute_subtotal(self):
-        self.subtotal = self.cantidad * self.precioNeto
-
     
- 
+    precioNeto_almacened=precioNeto
+    cantidad= fields.Float()
+    @api.onchange('cantidad','descuento')
+    def _compute_subtotal(self):
+        if self.descuento>0:
+            self.subtotal = (self.cantidad*self.precioNeto)-(self.cantidad * self.precioNeto)*self.descuento/100
+        else:
+            self.subtotal = self.cantidad * self.precioNeto
+
     subtotal=fields.Float(compute='_compute_subtotal')
+
+
+
+    descuento = fields.Float(computed='_compute_descuento')
