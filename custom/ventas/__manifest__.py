@@ -3,20 +3,20 @@
     'name': "ventas",
 
     'summary': """
-        Short (1 phrase/line) summary of the module's purpose, used as
-        subtitle on modules listing or apps.openerp.com""",
+        Módulo desarrollado para facilitar la gestión de ventas de manera local en Botillería Francia""",
 
     'description': """
-        Long description of module's purpose
+        En este módulo se le permitirá al usuario que tenga todos los permisos
+poder gestionar las ventas de la organización y ver indicadores.
     """,
 
-    'author': "My Company",
-    'website': "http://www.yourcompany.com",
+    'author': "Esteban Carvallo",
+    'website': "https://github.com/crewxart",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/12.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'gestion',
     'version': '0.1',
 #
     # any module necessary for this one to work correctly
