@@ -17,8 +17,7 @@ class factura(models.Model):
     estado=fields.Selection([('Pagada','Pagada'),('Pendiente','Pendiente'),('Devolución','Devolución')])
 
     factura_ids= fields.One2many('detalle', 'factura_id', string="Detalle")
-    
-      
+
 
 class detalle(models.Model):
     _name='detalle'
