@@ -24,6 +24,9 @@ class detalle(models.Model):
     _name='detalle'
     factura_id = fields.Many2one('factura', string="Factura")
 
+
+    ########## GENERAL
+    ## Obtener costo neto de producto seleccionado.
     @api.onchange('productos_id')
     def _onchange(self):
         self.precioNeto= self.productos_id.costoNeto
@@ -34,15 +37,20 @@ class detalle(models.Model):
     
     precioNeto_almacened=precioNeto
     cantidad= fields.Float()
+    descuento = fields.Float(string="Descuento %")
+
+    ##Calcular subtotal al modificar cantidad o descuento
     @api.onchange('cantidad','descuento')
     def _compute_subtotal(self):
-        if self.descuento>0:
-            self.subtotal = (self.cantidad*self.precioNeto)-(self.cantidad * self.precioNeto)*self.descuento/100
+        if (self.descuento>0):
+            self.subtotal = (self.cantidad*self.precioNeto)-(self.cantidad * self.precioNeto)#*self.descuento/100
         else:
             self.subtotal = self.cantidad * self.precioNeto
 
-    subtotal=fields.Float(compute='_compute_subtotal')
+    subtotal=fields.Float()
 
 
 
-    descuento = fields.Float(computed='_compute_descuento')
+
+    ############### IMPUESTOS
+
