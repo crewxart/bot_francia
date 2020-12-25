@@ -15,7 +15,7 @@
                     <field name="iva"/>
 
 
-                    <field name="subtotal" sum="Total_Of_Subtotal"/>
+                    <field name="subtotal" sum="Total_Of_Subtotal" string="Total"/>
 
 
                     

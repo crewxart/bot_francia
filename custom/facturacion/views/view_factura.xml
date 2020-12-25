@@ -6,10 +6,16 @@
         <field name="name">Lista de facturas</field>
         <field name="model">factura</field>
         <field name="arch" type="xml">
-        <tree>
+        <tree decoration-success="estado=='Pagada'" decoration-danger="estado=='Devolución'" decoration-warning="estado=='Pendiente'">
             <field name="name"/>
             <field name="EmpresaMandante"/>
+            <field name="nFactura"/>
             <field name="LugarEmision"/>
+            <field name="fecha"/>
+            <field name="estado"/>
+
+
+
             
         </tree>
         </field>
@@ -24,8 +30,12 @@
         <form>
         <sheet>
         <group>
-                    <field name="name"/>
-                    <field name="EmpresaMandante"/>
+            <field name="name"/>
+            <field name="EmpresaMandante"/>
+            <field name="nFactura"/>
+            <field name="LugarEmision"/>
+            <field name="fecha"/>
+            <field name="estado"/>
         </group>
         <group>
                     <field name="factura_ids"/>

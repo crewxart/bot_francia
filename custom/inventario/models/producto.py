@@ -20,6 +20,7 @@ class producto(models.Model):
     costoNeto = fields.Float()
     precioVenta = fields.Float()
     productos_ids = fields.One2many('detalle', 'productos_id')
+    stock=fields.Float()
     
     
 

@@ -4,25 +4,26 @@ from odoo import models, fields, api
 class factura(models.Model):
     _name='factura'
     EmpresaMandante=fields.Char(string="Empresa")
-    name=fields.Char()
-    DireccionFactura=fields.Char()
-    DireccionEntrega=fields.Char()
-    Rut=fields.Integer() ##Validar datos.
-    Comuna=fields.Char()
-    Planilla=fields.Char()
-    Local=fields.Char()
-    nFactura=fields.Integer()
-    LugarEmision=fields.Char()
+    name=fields.Char(string="Nombre")
+    DireccionFactura=fields.Char(string="Dirección factura")
+    DireccionEntrega=fields.Char(string="Dirección entrega")
+    Rut=fields.Integer(string="Rut") ##Validar datos.
+    Comuna=fields.Char(string="Comuna")
+    Planilla=fields.Char(string="Planilla")
+    Local=fields.Char(string="Local")
+    nFactura=fields.Integer(string="Número de factura")
+    LugarEmision=fields.Char(string="Lugar de emisión")
+    fecha=fields.Date(string="Fecha emisión ")
+    estado=fields.Selection([('Pagada','Pagada'),('Pendiente','Pendiente'),('Devolución','Devolución')])
 
-
-    factura_ids= fields.One2many('detalle', 'factura_id', string="Productos")
+    factura_ids= fields.One2many('detalle', 'factura_id', string="Detalle")
     
       
 
 class detalle(models.Model):
     _name='detalle'
     factura_id = fields.Many2one('factura', string="Factura")
-    productos_id = fields.Many2one('producto', string="productos")
+    productos_id = fields.Many2one('producto', string="Producto")
 
 
     ########## GENERAL
@@ -31,10 +32,8 @@ class detalle(models.Model):
     def _onchange(self):
         self.precioNeto= self.productos_id.costoNeto
     
-
-    precioNeto=fields.Float()
+    precioNeto=fields.Float(string="Precio bruto")
     ###################
-
 
     ##Calcular subtotal al modificar cantidad o descuento
     cantidad= fields.Float()
