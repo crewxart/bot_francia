@@ -10,6 +10,11 @@
           <field name="name"/>
           <field name="descripcion"/>
           <field name="costoNeto"/>
+          <field name="precioVenta"/>
+
+          <field name="stock"/>
+          
+
 
           <field name="categoria_id"/>
         </tree>
@@ -30,6 +35,7 @@
                     <field name="descripcion"/>
                     <field name="categoria_id"/>
                     <field name="costoNeto"/>
+                    <field name="precioVenta"/>
 
                 </group>
             </sheet>

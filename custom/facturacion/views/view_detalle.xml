@@ -13,6 +13,8 @@
                     <field name="cantidad"/>
                     <field name="descuento"/>
                     <field name="iva"/>
+                    <field name="asd"/>
+
                     <field name="subtotal" sum="Total_Of_Subtotal" string="Total"/>
 
 

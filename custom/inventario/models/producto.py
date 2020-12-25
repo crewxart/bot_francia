@@ -20,11 +20,12 @@ class producto(models.Model):
     costoNeto = fields.Float()
     precioVenta = fields.Float()
     productos_ids = fields.One2many('detalle', 'productos_id')
-    stock=fields.Float()
+    stock=fields.Float(readonly=True)
+    precioVenta=fields.Float()
     _sql_constraints = [('name', 'unique(name)', 'Este producto ya existe')
                     ]
     
-
+    
     categoria_id = fields.Many2one(
         'categoria',
         string="Categoría"

@@ -1,0 +1,63 @@
+<odoo>
+    <data>
+    <!--  List venta-->
+
+        <record model="ir.ui.view" id="venta_list">
+        <field name="name">inventario list</field>
+        <field name="model">ventas</field>
+        <field name="arch" type="xml">
+        <tree>
+                   <field name="Vendedor_id"/>
+          <field name="fechaInicio"/>
+          <field name="fechaTermino"/>
+        </tree>
+        </field>
+        </record>
+
+    <!-- Form producto -->
+        
+        <record model="ir.ui.view" id="venta_form">
+        <field name="name">inventario list</field>
+        <field name="model">ventas</field>
+        <field name="arch" type="xml">
+        <form>
+            <sheet>
+                <group>
+                    <field name="Vendedor_id"/>
+                    <field name="fechaInicio"/>
+                    <field name="fechaTermino"/>
+
+                </group>
+            </sheet>
+        </form>
+        </field>
+        </record>
+
+    <!-- Action window Producto -->
+        <record model="ir.actions.act_window" id="venta_action_window">
+            <field name="name">ventas</field>
+            <field name="res_model">ventas</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+    <!-- Action server Producto -->
+    <record model="ir.actions.server" id="venta_action_server">
+      <field name="name">inventario server</field>
+      <field name="model_id" ref="model_ventas"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+
+    <!-- Menú root venta -->
+    <menuitem name="Ventas" id="ventas_menu_root"/>
+    <menuitem name="Venta" id="venta_menu_1" parent="ventas_menu_root" action="venta_action_window"/>
+
+
+    </data>
+</odoo>
+    

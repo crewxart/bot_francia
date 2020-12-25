@@ -51,4 +51,6 @@ class detalle(models.Model):
             self.subtotal = (self.cantidad * self.precioNeto)+self.iva
 
     subtotal=fields.Float()
-    ## Impuesto
+    ## Modificar inventario.
+    
+    asd=fields.Char(string="Algo")

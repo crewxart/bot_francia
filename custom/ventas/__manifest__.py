@@ -24,9 +24,11 @@ poder gestionar las ventas de la organización y ver indicadores.
 
     # always loaded
     'data': [
-        # 'security/ir.model.access.csv',
+         'security/ir.model.access.csv',
         'views/views.xml',
         'views/templates.xml',
+        'views/view_venta.xml',
+        #'views/view_vendedor.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
