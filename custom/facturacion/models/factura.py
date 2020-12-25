@@ -43,7 +43,7 @@ class detalle(models.Model):
     @api.onchange('cantidad','descuento')
     def _compute_subtotal(self):
         if (self.descuento>0):
-            self.subtotal = (self.cantidad*self.precioNeto)-(self.cantidad * self.precioNeto)#*self.descuento/100
+            self.subtotal = (self.cantidad*self.precioNeto)-(self.cantidad * self.precioNeto)*self.descuento/100
         else:
             self.subtotal = self.cantidad * self.precioNeto
 

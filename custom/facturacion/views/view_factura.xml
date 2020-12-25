@@ -22,17 +22,20 @@
         <field name="model">factura</field>
         <field name="arch" type="xml">
         <form>
-            <sheet>
-                    <group>
-
+        <sheet>
+        <group>
                     <field name="name"/>
                     <field name="EmpresaMandante"/>
-                    </group>
-                    <group>
+        </group>
+            <notebook>
+                <page string="Detalle">
                     <field name="factura_ids"/>
+                </page>
+                <page string="Impuestos">
+                </page>
+            </notebook>
+        </sheet>
 
-                    </group>
-            </sheet>
         </form>
         </field>
         </record>
