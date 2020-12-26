@@ -22,6 +22,8 @@ class factura(models.Model):
 class detalle(models.Model):
     _name='detalle'
     factura_id = fields.Many2one('factura', string="Factura")
+
+    
     productos_id = fields.Many2one('producto', string="Producto")
 
 

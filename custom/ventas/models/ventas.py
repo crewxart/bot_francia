@@ -6,3 +6,8 @@ class ventas(models.Model):
     Vendedor_id = fields.Many2one('vendedor', string="Vendedor")
     fechaInicio= fields.Date()
     fechaTermino=fields.Date()
+    ventas_id=fields.Many2one('ventasdetalle')
+
+class ventasDetalle(models.Model):
+    _name='ventasdetalle'
+    ventas_ids= fields.One2many('ventas', 'ventas_id')
