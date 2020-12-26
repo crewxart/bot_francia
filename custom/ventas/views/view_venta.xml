@@ -7,9 +7,12 @@
         <field name="model">ventas</field>
         <field name="arch" type="xml">
         <tree>
-                   <field name="Vendedor_id"/>
           <field name="fechaInicio"/>
-          <field name="fechaTermino"/>
+          <field name="totalparcial"/>
+          <field name="totalsimpuestos"/>
+          <field name="impuesto"/>
+          <field name="ganancia"/>
+
         </tree>
         </field>
         </record>
@@ -23,13 +26,13 @@
         <form>
             <sheet>
                 <group>
-                    <field name="Vendedor_id"/>
                     <field name="fechaInicio"/>
-                    <field name="fechaTermino"/>
-
+                    <field name="totalparcial"/>
+                    <field name="totalsimpuestos"/>
+                    <field name="impuesto"/>
+                    <field name="ganancia"/>
                 </group>
                 <group>
-                    <field name="ventas_id"/>
 
                 </group>
             </sheet>

@@ -28,7 +28,6 @@ poder gestionar las ventas de la organización y ver indicadores.
         'views/views.xml',
         'views/templates.xml',
         'views/view_venta.xml',
-        #'views/view_vendedor.xml',
     ],
     # only loaded in demonstration mode
     'demo': [
